@@ -22,6 +22,14 @@ services:
       - ELASTICSEARCH_HOSTS=http://elastic:9200
       - xpack.security.enabled=false
 
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    restart: always
+    volumes:
+      - redis_data:/data
+
   app:
     build: app
     ports:
@@ -31,3 +39,4 @@ services:
 volumes:
  elasticsearch_data:
  kibana_data:
+ redis_data:
