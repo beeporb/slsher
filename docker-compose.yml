@@ -42,8 +42,18 @@ services:
   app:
     build: app
     ports:
-      - 8080:8080
+      - 80:80
     restart: always
+
+  server:
+    build: server
+    ports:
+     - 8080:8080
+    command: uvicorn slsher_server:api --host 0.0.0.0 --port 8080
+  
+  services:
+    build: server
+    command: celery -A slsher_services worker --loglevel INFO
   
 volumes:
  elasticsearch_data:
