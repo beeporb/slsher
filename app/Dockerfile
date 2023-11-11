@@ -15,4 +15,4 @@ WORKDIR /var/www
 
 COPY --from=build /src/build/dist /var/www
 
-ENTRYPOINT [ "caddy", "file-server", "--listen", ":8080", "--root", "/var/www"  ]
+ENTRYPOINT [ "caddy", "file-server", "--listen", ":80", "--root", "/var/www"  ]
