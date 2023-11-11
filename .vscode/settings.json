@@ -1,0 +1,12 @@
+{
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.wordBasedSuggestions": false,
+        "editor.formatOnSaveMode": "file",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "eeyore.yapf",
+        
+    },
+    "editor.rulers": [79],
+    "yapf.args": ["--style", "{based_on_style: pep8, indent_width: 4}"]
+}
